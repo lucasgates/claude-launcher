@@ -1,7 +1,33 @@
-# claude-launcher
+```
+                             /\
+                            /  \
+                            |  |
+                            |C |
+                            |  |
+                           /|  |\
+                          / |  | \
+                         /  |  |  \
+                            |  |
+                           (|  |)
+                            |  |
+                            \__/
+                            /  \
+                           ' /\ '
+                            '  '
 
-Launch a [Claude Code](https://claude.com/claude-code) session on a machine from
-your phone, over the internet, from behind NAT — with **no inbound ports opened**.
+    _              _         _                   _
+ __| |__ _ _  _ __| |___ ___| |__ _ _  _ _ _  __| |_  ___ _ _
+/ _| / _` | || / _` / -_)___| / _` | || | ' \/ _| ' \/ -_) '_|
+\__|_\__,_|\_,_\__,_\___|   |_\__,_|\_,_|_||_\__|_||_\___|_|
+```
+
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)
+![Dependencies: none](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
+![Platform: Linux](https://img.shields.io/badge/platform-linux-lightgrey.svg)
+
+> **Launch a [Claude Code](https://claude.com/claude-code) session on a machine
+> from your phone, over the internet, from behind NAT — with no inbound ports.**
 
 A tiny webhook listener spawns `claude --remote-control` in a `screen` session;
 the session then shows up under Remote Control in the Claude app, where you drive
@@ -30,6 +56,19 @@ The webhook is a pure "start a session" button: it takes **no commands and no
 caller-supplied parameters**. The session name is generated server-side and the
 child is spawned with an argument list (never a shell), so there is nothing for a
 request to inject. All real work happens later, through the Claude app.
+
+## Quick start
+
+```bash
+git clone https://github.com/lucasgates/claude-launcher.git
+cd claude-launcher && ./setup.sh      # generate secret, install + start the listener
+sudo loginctl enable-linger "$USER"   # keep it running across reboots
+```
+
+Then point a Cloudflare tunnel at `http://127.0.0.1:8787` (see
+[Cloudflare tunnel](#cloudflare-tunnel)) and add a phone shortcut that POSTs to
+`/launch` with your secret (see [Phone trigger](#phone-trigger-ios-shortcuts)).
+Tap it → a fresh Claude session appears in the app under Remote Control.
 
 ## Requirements
 

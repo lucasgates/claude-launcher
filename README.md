@@ -1,24 +1,23 @@
 ```
-                             /\
-                            /  \
-                            |  |
-                            |C |
-                            |  |
-                           /|  |\
-                          / |  | \
-                         /  |  |  \
-                            |  |
-                           (|  |)
-                            |  |
-                            \__/
-                            /  \
-                           ' /\ '
-                            '  '
+                               /\
+                              /  \
+                              |  |
+                              |C |
+                              |  |
+                             /|  |\
+                            / |  | \
+                           /  |  |  \
+                              |  |
+                             (|  |)
+                              |  |
+                              \__/
+                             '/  \'
+                             '    '
 
-    _              _         _                   _
- __| |__ _ _  _ __| |___ ___| |__ _ _  _ _ _  __| |_  ___ _ _
-/ _| / _` | || / _` / -_)___| / _` | || | ' \/ _| ' \/ -_) '_|
-\__|_\__,_|\_,_\__,_\___|   |_\__,_|\_,_|_||_\__|_||_\___|_|
+       =[ claude-launcher v1.0.0                               ]
++ -- --=[ launch Claude Code from your phone, behind NAT       ]
++ -- --=[ 1 webhook  -  0 inbound ports  -  via cloudflare     ]
++ -- --=[ bearer auth  -  screen  -  claude --remote-control   ]
 ```
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)

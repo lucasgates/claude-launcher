@@ -1,0 +1,10 @@
+# Secrets and local config — never commit these.
+config.env
+*.secret
+
+# Cloudflare tunnel credentials (if you keep any in-tree).
+.cloudflared/
+cloudflared/config.yml
+
+__pycache__/
+*.pyc

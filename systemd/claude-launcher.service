@@ -1,0 +1,21 @@
+[Unit]
+Description=Claude remote launcher webhook listener
+Documentation=https://github.com/REPLACE_ME/claude-launcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# __PYTHON__ and __PROJECT_DIR__ are filled in by setup.sh at install time.
+# %h expands to the service user's home directory.
+EnvironmentFile=%h/.config/claude-launcher/config.env
+ExecStart=__PYTHON__ __PROJECT_DIR__/launcher.py
+Restart=on-failure
+RestartSec=5
+# Do NOT add ProtectHome/ProtectSystem/PrivateTmp here: the claude session is
+# spawned as a child of this service and inherits its mount namespace, so those
+# sandboxes would block claude from writing to $HOME and /tmp and break it.
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

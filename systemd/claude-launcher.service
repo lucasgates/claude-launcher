@@ -1,6 +1,6 @@
 [Unit]
 Description=Claude remote launcher webhook listener
-Documentation=https://github.com/REPLACE_ME/claude-launcher
+Documentation=https://github.com/lucasgates/claude-launcher
 After=network-online.target
 Wants=network-online.target
 

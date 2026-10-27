@@ -42,7 +42,7 @@ request to inject. All real work happens later, through the Claude app.
 ## Install
 
 ```bash
-git clone <this-repo> claude-launcher
+git clone https://github.com/lucasgates/claude-launcher.git
 cd claude-launcher
 ./setup.sh
 ```
